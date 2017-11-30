@@ -1,0 +1,99 @@
+{% extends "template.html" %}
+{% block page_javascript %}
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/highstock.js"></script>
+{% endblock %}
+{% block content %}
+<h1>Biometrics</h1>
+
+<p>
+    Daily data from the Withings Wifi Body Scale
+</p>
+
+<h2>
+	Weight (lbs)
+</h2>
+
+<div id="weight" style="height: 300px;">
+</div>
+
+<script>
+    data = {{ weights }};
+
+    $('#weight').highcharts('StockChart', {
+        chart: {
+            animation: false,
+            margin: 0
+        },
+
+        rangeSelector : {
+            selected : 0,
+            inputEnabled: false,
+            labelStyle: {
+                display: 'none'
+            },
+            buttonTheme: { 
+                fill: 'none',
+                'stroke-width': 0,
+                r: 3,
+                style: {
+                    color: '#68a',
+                    fontWeight: 'normal',
+                    cursor: 'pointer'
+                },
+                states: {
+                    hover: {
+                        fill: '#68a',
+                        style: {
+                            color: '#fff',
+                            fontWeight: 'bold'
+                        }
+                    },
+                    select: {
+                        fill: '#68a',
+                        style: {
+                            color: '#fff',
+                            fontWeight: 'bold'
+                        }
+                    }
+                }
+			},
+			buttons: [{
+				type: 'month',
+				count: 3,
+				text: '3m'
+			}, {
+				type: 'year',
+				count: 1,
+				text: '1y'
+			}, {
+				type: 'all',
+				count: 1,
+				text: 'All'
+			}]
+        },
+
+        series : [{
+            name : 'Weight (lb)',
+            data : data,
+            tooltip: {
+                valueDecimals: 1
+            },
+            type: 'spline'
+        }],
+
+        scrollbar: {
+            enabled: false
+        },
+
+        navigator: {
+            height: 80
+        },
+
+        credits: {
+            enabled: false
+        },
+
+    });
+</script>
+{% endblock %}

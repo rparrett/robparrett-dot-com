@@ -1,0 +1,15 @@
+{
+    "require": {
+        "slim/slim": "^3.0",
+        "monolog/monolog": "^1.23",
+        "slim/twig-view": "^2.3",
+        "league/oauth1-client": "^1.7",
+        "huitiemesens/oauth": "^1.1",
+        "zorrodg/oauth-php": "^0.1.0",
+        "slim/flash": "^0.4.0",
+        "kanellov/slim-twig-flash": "^0.2.0"
+    },
+    "autoload": {
+        "psr-4": {"": "src/"}
+    }
+}

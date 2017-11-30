@@ -1,0 +1,19 @@
+{% extends "template.html" %}
+{% block content %}
+<h2>Fanbot 0.1 - Proof of Concept</h2>
+<p>In 2010 I faced a serious problem. The problem was that it was too hot at night, but too cold in the morning. Conventional solutions to this problem clearly weren't an option in my rented condo.</p>
+<p>I built a contraption to turn the fan on and off using a Lego NXT and linear actuator.</p>
+<video class="video-responsive" width="640" height="480" controls>
+    <source src="//robparrett.com/static/vid/fanbot1.mp4" type="video/mp4">
+</video>
+<h2>Fanbot 1.0</h2>
+<p>With the basic mechanical concept working, it was time to turn Fanbot into a more permanent device that could operate on a schedule without human intervention.</p>
+<p>I designed the mechanical parts for version 1.0 in SolidWorks and had them printed by <a href="https://www.shapeways.com">Shapeways</a>. I attached an arduino with a pololu motor controller and a DS1307 Real Time Clock module from <a href="https://www.sparkfun.com">Sparkfun</a> were attached precariously with zip ties.</p>
+<img class="img-responsive" src="//robparrett.com/static/img/fanbot2.jpg">
+<video class="video-responsive" controls>
+    <source src="//robparrett.com/static/vid/fanbot2.mp4" type="video/mp4">
+</video>
+<h2>Fanbot 2.0 - Internet Of Fans</h2>
+<p>Fanbot served its purpose quite well, but had many flaws. It was very loud, and required a cable to be attached to reprogram the schedule. It also required sacrificing one of the fan's light sockets for a 5v power adapter.</p>
+<p>I now live in my own house with some decent insulation and my very own programmable thermostat. It's a pretty reasonable temperature in there.</p>
+{% endblock %}

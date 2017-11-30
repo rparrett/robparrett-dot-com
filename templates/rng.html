@@ -1,0 +1,10 @@
+{% extends "template.html" %}
+{% block content %}
+<h1>Random Username Generator</h1>
+<p>Refresh for more</p>
+<p>
+{% for name in names %}
+    {{ name }}<br/>
+{% endfor %}
+</p>
+{% endblock %}
