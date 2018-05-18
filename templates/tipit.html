@@ -1,0 +1,35 @@
+{% extends "template.html" %}
+{% block page_javascript %}
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/tipit.js"></script>
+<script src="/js/nouislider/jquery.nouislider.all.min.js"></script>
+{% endblock %}
+{% block page_css %}
+<link rel="stylesheet" href="/js/nouislider/jquery.nouislider.min.css">
+{% endblock %}
+{% block content %}
+<h2>web-TipiT</h2>
+<p>
+	TipiT is a palindrome. It's also a tip calculator that produces bills with interesting digit sequences. There's also a <a href="http://github.com/rparrett/tipit">native android version</a>.
+</p>
+<div class="form-group">
+	<h2>Controls</h2>
+	<p></p>
+    <label class="form-label" for="min">Range</label>
+    <div  id="rangeSlider"></div>
+    <span id="min">15%</span> - 
+    <span id="max">20%</span>
+    <label class="form-label">Bill Total</label>
+    <input class="form-input" type="number" step="0.01" id="billTotal">
+    <label class="form-label">Tip On</label>
+    <input class="form-input" type="number" step="0.01" id="tipOn"><br/>
+</div>
+<div>
+	<h2>Results</h2>
+	<p>
+		<span id="noResults">None, so far.</span>
+	</p>
+	<div id="results">
+	</div>
+</div>
+{% endblock %}

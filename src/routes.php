@@ -37,6 +37,10 @@ $app->get('/biometrics', function(Request $request, Response $response, array $a
     ]);
 });
 
+$app->get('/tipit', function(Request $request, Response $response, array $args) {
+    return $this->renderer->render($response, 'tipit.html', []);
+});
+
 $app->get('/fanbot', function(Request $request, Response $response, array $args) {
     return $this->renderer->render($response, 'fanbot.html', []);
 });
