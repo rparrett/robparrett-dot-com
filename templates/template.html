@@ -31,6 +31,12 @@
                 {% else %}
                 <a href="/login" class="btn btn-link">Log In</a>
                 {% endif %}
+                <div class="dropdown dropdown-right show-xs">
+                    <a href="#" class="btn btn-primary dropdown-toggle" tabindex="0">
+                        <i class="icon icon-menu"></i>
+                    </a>
+                    {% include 'menu.html' %}
+                </div>
             </section>
         </header>
     </div>
@@ -64,50 +70,12 @@
                 {% endfor %}
                 {% block content %}{% endblock %}
             </div>
-            <div class="column col-3 col-xs-12">
-                <ul class="menu">
-                    <li class="divider" data-content="Recent Posts"></li>
-                    <li class="menu-item">
-                        <a href="/pongclock">Pongclock</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="/fanbot">Fanbot</a>
-                    </li>
-                    <li class="divider" data-content="Pages"></li>
-                    <li class="menu-item">
-                        <a href="/tipit">Web-Tipit</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="/rng">Random Username Generator</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="/biometrics">Biometrics</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="http://az-climbate.robparrett.com">Weekend Weather Dashboard</a>
-                    </li>
-                    <li class="divider" data-content="Links"></li>
-                    <li class="menu-item">
-                        <a href="https://github.com/rparrett">My GitHub</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="https://www.thingiverse.com/ellipticaloptician/about">My Thingiverse</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="https://www.shapeways.com/shops/suddenlycorporeal">My Shapeways Shop</a>
-                    </li>
-{% if isAuthenticated() %}
-                    <li class="divider" data-content="Secret"></li>
-                    <li class="menu-item">
-                        <a href="/secret">Secret Page</a>
-                    </li>
-{% endif %}
-                </ul>
+            <div class="column col-3 col-xs-12 hide-xs">
+                {% include 'menu.html' %}
             </div>
         </div>
     </div>
     <footer class="section section-footer">
-
     </footer>
 </body>
 </html>
